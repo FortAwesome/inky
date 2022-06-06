@@ -97,7 +97,7 @@ describe("FAButton", () => {
 
   it("generates a button without a background color class applied", () => {
     let input = `
-            <fa-button ol-height="50" align="left" width="50" ol-width="200" class="radius" href="https://fontawesome.com/faq">
+            <fa-button ol-height="50" align="left" width="50" ol-width="200" class="default radius" href="https://fontawesome.com/faq">
             Default button
           </fa-button>
         `;
@@ -108,7 +108,7 @@ describe("FAButton", () => {
     style="height: 50px; v-text-anchor: middle; width: 200px"
     arcsize="20%"
     strokecolor="#1e3650"
-    fillcolor="#ffffff"><w:anchorlock /><center
+    fillcolor="#F0F1F3"><w:anchorlock /><center
       style="
         color: #183153;
         font-family: sans-serif;
@@ -119,7 +119,7 @@ describe("FAButton", () => {
       Default button
     </center></v:roundrect></div><![endif]-->
     <!--[if !mso]><!-- -->
-    <table class="button radius" role="presentation">
+    <table class="button default radius" role="presentation">
                 <tbody>
                     <tr>
                         <td>
