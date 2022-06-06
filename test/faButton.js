@@ -94,4 +94,51 @@ describe("FAButton", () => {
         `;
     compare(input, expected);
   });
+
+  it("generates a button without a background color class applied", () => {
+    let input = `
+            <fa-button ol-height="50" align="left" width="50" ol-width="200" class="radius" href="https://fontawesome.com/faq">
+            Default button
+          </fa-button>
+        `;
+    let expected = `
+    <!--[if mso]><div><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:w="urn:schemas-microsoft-com:office:word"
+    href="https://fontawesome.com/faq"
+    style="height: 50px; v-text-anchor: middle; width: 200px"
+    arcsize="20%"
+    strokecolor="#1e3650"
+    fillcolor="#ffffff"><w:anchorlock /><center
+      style="
+        color: #183153;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+      "
+    >
+      Default button
+    </center></v:roundrect></div><![endif]-->
+    <!--[if !mso]><!-- -->
+    <table class="button radius" role="presentation">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table role="presentation">
+                                <tbody>
+                                    <tr>
+                                        <td><a align="left" width="50" href="https://fontawesome.com/faq">
+                                                Default button
+                                            </a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <!--<![endif]-->
+        `;
+    compare(input, expected);
+  });
 });
