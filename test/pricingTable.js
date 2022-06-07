@@ -6,7 +6,7 @@ describe("PricingTable", () => {
         <price-table title="Something" total="$80"></price-table>
       `;
     var expected = `
-        <table class="pricing-table" role="table">
+        <table class="pricing-table display-table" role="table">
           <tr>
             <td>
               <h5>Something</h5>
@@ -29,7 +29,7 @@ describe("PricingTable", () => {
     `;
 
     var expected = `
-      <table class="pricing-table" role="table">
+      <table class="pricing-table display-table" role="table">
         <tr>
           <td>1</td>
         </tr>
