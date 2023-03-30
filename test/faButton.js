@@ -65,10 +65,12 @@ describe("FAButton", () => {
     strokecolor="#1e3650"
     fillcolor="#FF8787"><w:anchorlock /><center
       style="
-        color: #183153;
+        color: #DBE5F0;
         font-family: sans-serif;
         font-size: 16px;
         font-weight: bold;
+        mso-style-textfill-type:gradient;
+        mso-style-textfill-fill-gradientfill-stoplist:'0 \#183153 1 100000\,99000 \#183153 1 100000';
       "
     >
       Some Alert Text
@@ -112,10 +114,12 @@ describe("FAButton", () => {
     strokecolor="#1e3650"
     fillcolor="#F0F1F3"><w:anchorlock /><center
       style="
-        color: #183153;
+        color: #DBE5F0;
         font-family: sans-serif;
         font-size: 16px;
         font-weight: bold;
+        mso-style-textfill-type:gradient;
+        mso-style-textfill-fill-gradientfill-stoplist:'0 \#183153 1 100000\,99000 \#183153 1 100000';
       "
     >
       Default button
