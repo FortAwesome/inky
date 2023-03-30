@@ -1,0 +1,50 @@
+name: Cut a release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The new version number'
+        required: true
+        type: string
+      branch:
+        description: 'Branch to cut the release from'
+        default: 'master'
+        required: false
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: ${{ inputs.branch }}
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.16.x'
+
+    - name: Update package.json
+      run: |
+        sed -i 's/version: ".*"/version: "${{ inputs.version }}"/g' package.json
+        npm install
+        npx gulp browser
+
+    - name: Commit & push changes
+      uses: actions-js/push@master
+      with:
+        message: 'Bump to ${{ inputs.version }}'
+        branch: ${{ inputs.branch }}
+        github_token: ${{ secrets.CUT_RELEASE_TOKEN }}
+
+    - name: Cut release
+      env:
+        GITHUB_TOKEN: ${{ secrets.CUT_RELEASE_TOKEN }}
+      run: |
+        gh release create ${{ inputs.version }} --generate-notes --target ${{ inputs.branch }}
+
+    - name: Setup tmate session
+      if: ${{ failure() }}
+      uses: mxschmitt/action-tmate@v3
