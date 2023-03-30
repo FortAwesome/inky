@@ -1,6 +1,6 @@
 {
   "name": "@fortawesome-internal-tools/inky",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Convert a simple HTML syntax into tables compatible with Foundation for Emails.",
   "author": "Foundation <contact@get.foundation> (https://get.foundation)",
   "keywords": [
