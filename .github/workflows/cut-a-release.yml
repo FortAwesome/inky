@@ -28,9 +28,10 @@ jobs:
 
     - name: Update package.json
       run: |
-        sed -i 's/version: ".*"/version: "${{ inputs.version }}"/g' package.json
+        npm install -g npm
         npm install
         npx gulp browser
+        sed -i 's/"version": ".*"/"version": "${{ inputs.version }}"/g' package.json
 
     - name: Commit & push changes
       uses: actions-js/push@master
