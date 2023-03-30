@@ -9,7 +9,7 @@ on:
         type: string
       branch:
         description: 'Branch to cut the release from'
-        default: 'master'
+        default: 'develop'
         required: false
         type: string
 
